@@ -1,7 +1,6 @@
 #5. Igual que el anterior pero las asignaturas las introduce el usuario. 
 from decimal import Decimal
 from operator import itemgetter
-import sys
 
 def main(args):
     lista = []
