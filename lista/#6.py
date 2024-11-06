@@ -6,7 +6,7 @@ def main(args):
     for i in range(len(lista)):
         print("Alumno",i + 1)
         for j in range(len(lista[i])):
-            print(lista[i][j][0]," --- ",lista[i][j][1])
+            print(lista[i][j][0],"---",lista[i][j][1])
     
     
 if __name__ == '__main__':
