@@ -1,17 +1,23 @@
-```markdown
 # Python Learning Exercises and Examples
 
 Welcome to the Python Learning Exercises repository! This repository contains a collection of Python exercises, curated to help beginners and intermediate learners enhance their programming skills. Each example is designed to practice core Python concepts, covering topics from basic syntax to more advanced data structures. By following these exercises, you'll build a solid foundation in Python and improve your problem-solving abilities.
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Exercise Categories](#exercise-categories)
-- [Contributing](#contributing)
-- [License](#license)
+- [Python Learning Exercises and Examples](#python-learning-exercises-and-examples)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Exercise Categories](#exercise-categories)
+    - [🧑‍💻 Basic Examples](#-basic-examples)
+    - [🔄 Control Structures](#-control-structures)
+    - [🛠️ Functions \& Modularization](#️-functions--modularization)
+    - [📋 Data Structures](#-data-structures)
+    - [✍️ String Manipulation](#️-string-manipulation)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Project Overview
 
