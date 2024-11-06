@@ -14,8 +14,6 @@ def main(args):
         media = total / 2  # Calcula la media
         print("La media del alumno es:", media)
 
-    
-    
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
