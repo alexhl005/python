@@ -18,8 +18,8 @@ def main():
     num_alumnos = int(input("Introduce el número de alumnos: "))
 
     # Recoger las asignaturas y notas de cada alumno
-    for alumno_numero in range(1, num_alumnos + 1):
-        print(f"\nIntroduce las asignaturas y notas del alumno {alumno_numero}:")
+    for i in range(num_alumnos):
+        print(f"\nIntroduce las asignaturas y notas del alumno {i + 1}:")
         asignaturas = []
         
         num_asignaturas = int(input("Introduce el número de asignaturas: "))
@@ -32,8 +32,9 @@ def main():
         
         lista_alumnos.append(asignaturas)
 
-    # Mostrar notas, media de cada alumno y calcular la nota más alta de todos
-    for alumno_numero, asignaturas_alumno in enumerate(lista_alumnos, start=1):
+    # Mostrar notas y media de cada alumno
+    for alumno_numero in range(1, num_alumnos + 1):
+        asignaturas_alumno = lista_alumnos[alumno_numero - 1]
         mostrar_notas(alumno_numero, asignaturas_alumno)
         _, promedio = calcular_total_y_media(asignaturas_alumno)
         print(f"La media del alumno {alumno_numero} es: {promedio}")
