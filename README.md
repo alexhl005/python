@@ -16,6 +16,7 @@ Welcome to the Python Learning Exercises repository! This repository contains a 
     - [🛠️ Functions \& Modularization](#️-functions--modularization)
     - [📋 Data Structures](#-data-structures)
     - [✍️ String Manipulation](#️-string-manipulation)
+    - [📖 Dictionaries](#-dictionaries)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -83,6 +84,9 @@ Below are the main categories of exercises included in this repository:
 
 ### ✍️ String Manipulation
 - **cadenas/**: Dive into string handling, covering basic operations, string methods, concatenation, and text processing.
+
+### 📖 Dictionaries
+- **diccionarios/**: Explore the power of dictionaries with exercises focused on creating key-value pairs, accessing values, updating data, and using dictionary methods. Learn practical use cases such as frequency counts, data grouping, and nested dictionaries.
 
 Each category includes exercises with various levels of difficulty, making this repository suitable for both beginners and those looking to reinforce their Python skills.
 
