@@ -54,6 +54,9 @@ def diccionarioMedias(media2):
     
     return dicc
 
+def maxCpu():
+    
+    return 0
 
 def main(args):
     datos = {
@@ -85,8 +88,8 @@ def main(args):
     #mediaServicios(datos)
     #mostrarDatos(serv)
     media2 = mediaServicios(datos)
-    pitos = diccionarioMedias(media2)
-    print(pitos)
+    dicmedia = diccionarioMedias(media2)
+    print(dicmedia)
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
