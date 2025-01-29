@@ -1,0 +1,56 @@
+import argparse
+import sys
+import os
+
+def lee_hosts(nombrearchivo):
+    """
+    Lee los hosts de un archivo, ignorando líneas vacías y comentarios.
+    """
+    try:
+        with open(nombrearchivo, "r") as file:
+            hosts = [
+                linea.strip() for linea in file.readlines()
+                if linea.strip() and not linea.startswith("#")
+            ]
+        return hosts
+    except FileNotFoundError:
+        print(f"Error: El archivo '{nombrearchivo}' no existe.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error al leer el archivo '{nombrearchivo}': {e}")
+        sys.exit(1)
+
+def separar_ips(lista):
+    ips = [
+        ip.split()[0] for ip in lista
+    ] 
+    return ips
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Verifica la conectividad de servidores desde un archivo.")
+    parser.add_argument("--file",
+                         type=str,
+                         default="/etc/hosts",
+                         help="Archivo que contiene los hosts o IPs a verificar (uno por línea). Por defecto usa /etc/hosts."
+    )
+    parser.add_argument("--timeout", 
+                          type=int, 
+                          default=1, 
+                          help="Tiempo de espera para cada ping (en segundos)."
+                        )
+    
+    args = parser.parse_args()
+    
+    print(f"Leyendo hosts desde: {args.file}")
+    hosts = lee_hosts(args.file)
+    ips = separar_ips(hosts)
+    print (f"{ips}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nInterrupción por el usuario.")
+        sys.exit(1)
