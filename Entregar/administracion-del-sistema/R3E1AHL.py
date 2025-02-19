@@ -1,6 +1,22 @@
 import argparse
+import subprocess
 import sys
 import os
+
+def ping_host(host, timeout=1):
+    """
+    Realiza un ping a un host y devuelve True si responde, False si no.
+    """
+    try:
+        resultado = subprocess.run(
+            ["ping", "-c", "1", "-W", str(timeout), host],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        return resultado.returncode == 0
+    except Exception as e:
+        print(f"Error al hacer ping a {host}: {e}")
+        return False
 
 def lee_hosts(nombrearchivo):
     """
@@ -26,7 +42,6 @@ def separar_ips(lista):
     ] 
     return ips
 
-
 def main():
     parser = argparse.ArgumentParser(description="Verifica la conectividad de servidores desde un archivo.")
     parser.add_argument("--file",
@@ -45,8 +60,15 @@ def main():
     print(f"Leyendo hosts desde: {args.file}")
     hosts = lee_hosts(args.file)
     ips = separar_ips(hosts)
-    print (f"{ips}")
-
+    
+    if not ips:
+        print("No se encontraron hosts válidos en el archivo.")
+        sys.exit(1)
+    
+    print("Verificando conectividad...")
+    for ip in ips:
+        estado = "OK" if ping_host(ip, timeout=args.timeout) else "FALLO"
+        print(f"{ip}: {estado}")
 
 if __name__ == "__main__":
     try:
